@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#15130f" />
+  <meta name="description" content="BRASA — cozinha autoral, fogo e hospitalidade no Campolim, Sorocaba." />
+  <title>BRASA — Campolim, Sorocaba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#experiencia">Pular para o conteúdo</a>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="BRASA, início">
+      <span class="brand-mark">B</span>
+      <span class="brand-word">BRASA</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#manifesto">A casa</a>
+      <a href="#menu">Menu</a>
+      <a href="#campolim">Campolim</a>
+    </nav>
+    <button class="reserve-pill" type="button" data-open-reservation>
+      <span class="reserve-dot" aria-hidden="true"></span>
+      Reservar uma mesa
+    </button>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" data-mobile-menu aria-hidden="true">
+    <nav aria-label="Navegação mobile">
+      <a href="#manifesto">A casa</a>
+      <a href="#menu">Menu</a>
+      <a href="#campolim">Campolim</a>
+      <button type="button" data-open-reservation>Reservar</button>
+    </nav>
+  </div>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-photo"></div>
+        <div class="hero-vignette"></div>
+        <div class="ember-field" data-embers></div>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">Campolim · Sorocaba · São Paulo</p>
+        <h1 id="hero-title">
+          <span>Depois do</span>
+          <em>pôr do sol,</em>
+          <span>a cozinha acende.</span>
+        </h1>
+        <div class="hero-bottom">
+          <p>Fogo vivo, ingredientes honestos e uma noite desenhada para ficar na memória.</p>
+          <button class="text-link" type="button" data-open-reservation>Encontrar minha mesa <span>↗</span></button>
+        </div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"><span>desça</span><i></i></div>
+    </section>
+
+    <section class="manifesto section-pad" id="manifesto">
+      <div class="manifesto-index">01 — A CASA</div>
+      <div class="manifesto-grid">
+        <p class="manifesto-kicker">Não é sobre luxo.<br>É sobre presença.</p>
+        <h2>Uma mesa iluminada no ponto certo. O som baixo. O primeiro aroma chegando antes do prato.</h2>
+        <div class="manifesto-note">
+          <p>BRASA nasce como uma casa noturna de cozinha contemporânea: técnica precisa, calor humano e ingredientes conduzidos pelo fogo.</p>
+          <span>Campolim, sem pressa.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="fire-story" aria-label="A experiência do fogo">
+      <div class="fire-stage" data-fire-stage>
+        <div class="fire-photo fire-photo-a" aria-hidden="true"></div>
+        <div class="fire-photo fire-photo-b" aria-hidden="true"></div>
+        <div class="fire-copy">
+          <p>02 — O GESTO</p>
+          <h2>O fogo não decora.<br><em>Ele decide.</em></h2>
+          <p class="fire-body">Textura, ponto, perfume, contraste. A chama participa de cada prato antes que ele participe da sua noite.</p>
+        </div>
+        <div class="fire-word" aria-hidden="true">BRASA</div>
+      </div>
+    </section>
+
+    <section class="menu-experience section-pad" id="menu">
+      <div class="menu-head">
+        <div>
+          <p class="section-label">03 — MENU EM MOVIMENTO</p>
+          <h2>Escolha pelo desejo,<br>não pela ordem da página.</h2>
+        </div>
+        <p>Uma prévia editorial. Os itens abaixo são espaços conceituais para o cardápio real.</p>
+      </div>
+
+      <div class="menu-tabs" role="tablist" aria-label="Categorias do menu">
+        <button class="active" role="tab" aria-selected="true" data-menu-tab="fogo">Do fogo</button>
+        <button role="tab" aria-selected="false" data-menu-tab="terra">Da terra</button>
+        <button role="tab" aria-selected="false" data-menu-tab="mar">Do mar</button>
+        <button role="tab" aria-selected="false" data-menu-tab="doce">Depois</button>
+      </div>
+
+      <div class="menu-stage" data-menu-stage>
+        <article class="dish-feature is-active" data-menu-panel="fogo">
+          <div class="dish-image dish-fire" role="img" aria-label="Prato autoral finalizado ao fogo"></div>
+          <div class="dish-copy">
+            <span>01</span>
+            <h3>[PRATO ASSINATURA]</h3>
+            <p>[descrição real do prato, ingrediente principal, técnica e acompanhamento]</p>
+            <small>Preço a inserir</small>
+          </div>
+        </article>
+        <article class="dish-feature" data-menu-panel="terra" hidden>
+          <div class="dish-image dish-earth" role="img" aria-label="Ingrediente vegetal em apresentação autoral"></div>
+          <div class="dish-copy">
+            <span>02</span>
+            <h3>[PRATO DA TERRA]</h3>
+            <p>[descrição real do prato, sazonalidade, origem e técnica]</p>
+            <small>Preço a inserir</small>
+          </div>
+        </article>
+        <article class="dish-feature" data-menu-panel="mar" hidden>
+          <div class="dish-image dish-sea" role="img" aria-label="Prato de peixe com apresentação contemporânea"></div>
+          <div class="dish-copy">
+            <span>03</span>
+            <h3>[PRATO DO MAR]</h3>
+            <p>[descrição real do prato, pesca, cocção e finalização]</p>
+            <small>Preço a inserir</small>
+          </div>
+        </article>
+        <article class="dish-feature" data-menu-panel="doce" hidden>
+          <div class="dish-image dish-dessert" role="img" aria-label="Sobremesa autoral em luz dramática"></div>
+          <div class="dish-copy">
+            <span>04</span>
+            <h3>[SOBREMESA]</h3>
+            <p>[descrição real da sobremesa, textura, temperatura e acabamento]</p>
+            <small>Preço a inserir</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="table-scene" aria-label="Uma noite no BRASA">
+      <div class="table-photo" aria-hidden="true"></div>
+      <div class="table-overlay"></div>
+      <div class="table-copy section-pad">
+        <p>04 — A NOITE</p>
+        <blockquote>“A melhor mesa não é a mais disputada. É a que parece ter sido preparada para você.”</blockquote>
+        <button type="button" class="circle-cta" data-open-reservation aria-label="Reservar uma mesa agora">
+          <span>reservar</span><span>↗</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="campolim section-pad" id="campolim">
+      <div class="campolim-title">
+        <p>05 — CAMPOLIM</p>
+        <h2>Uma casa para<br>começar a noite<br><em>ou prolongá-la.</em></h2>
+      </div>
+      <div class="campolim-info">
+        <div class="info-row"><span>Endereço</span><strong>[ENDERECO]</strong></div>
+        <div class="info-row"><span>Horários</span><strong>[HORARIOS]</strong></div>
+        <div class="info-row"><span>Telefone</span><strong>[TELEFONE]</strong></div>
+        <div class="info-row"><span>WhatsApp</span><strong>[WHATSAPP]</strong></div>
+        <div class="info-row"><span>Instagram</span><strong>[INSTAGRAM]</strong></div>
+        <div class="info-row"><span>Mapa</span><strong>[GOOGLE_MAPS]</strong></div>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="finale-media" aria-hidden="true"></div>
+      <div class="finale-copy">
+        <p>Campolim · Sorocaba</p>
+        <h2>A próxima memória<br>pode começar aqui.</h2>
+        <button class="finale-button" type="button" data-open-reservation>Reservar uma mesa <span>↗</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#top"><span class="brand-mark">B</span><span class="brand-word">BRASA</span></a>
+    <p>© <span data-year></span> BRASA. Conceito digital para Campolim, Sorocaba.</p>
+    <a href="#top">voltar ao início ↑</a>
+  </footer>
+
+  <button class="mobile-reserve" type="button" data-open-reservation>
+    <span>Reservar mesa</span><span>↗</span>
+  </button>
+
+  <dialog class="reservation" data-reservation aria-labelledby="reservation-title">
+    <div class="reservation-shell">
+      <button class="reservation-close" type="button" data-close-reservation aria-label="Fechar reserva">×</button>
+      <div class="reservation-brand">
+        <span class="brand-mark">B</span>
+        <p>Concierge BRASA</p>
+        <small>Assistente de reserva · demonstração</small>
+      </div>
+      <div class="reservation-conversation" aria-live="polite">
+        <div class="assistant-message" id="reservation-title">
+          <span class="avatar">B</span>
+          <div><p>Boa noite.</p><p>Vamos encontrar a mesa certa para a sua noite?</p></div>
+        </div>
+        <div class="conversation-log" data-conversation-log></div>
+      </div>
+      <div class="reservation-step" data-step="party">
+        <p class="question">Para quantas pessoas?</p>
+        <div class="choice-grid party-grid">
+          <button data-choice="2 pessoas">2</button><button data-choice="3 pessoas">3</button><button data-choice="4 pessoas">4</button><button data-choice="5 pessoas">5</button><button data-choice="6 pessoas">6</button><button data-choice="7+ pessoas">7+</button>
+        </div>
+      </div>
+      <div class="reservation-step" data-step="date" hidden>
+        <p class="question">Qual dia funciona melhor?</p>
+        <div class="date-grid" data-date-options></div>
+      </div>
+      <div class="reservation-step" data-step="time" hidden>
+        <p class="question">Prefere jantar mais cedo ou mais tarde?</p>
+        <div class="choice-grid time-grid">
+          <button data-choice="19:00">19:00</button><button data-choice="19:45">19:45</button><button data-choice="20:30">20:30</button><button data-choice="21:15">21:15</button><button data-choice="22:00">22:00</button>
+        </div>
+        <small class="demo-note">Horários ilustrativos. A disponibilidade real será conectada ao sistema de reservas.</small>
+      </div>
+      <div class="reservation-step" data-step="occasion" hidden>
+        <p class="question">Há algo especial nessa noite?</p>
+        <div class="choice-grid occasion-grid">
+          <button data-choice="Jantar sem ocasião especial">Só jantar bem</button><button data-choice="Aniversário">Aniversário</button><button data-choice="Encontro">Encontro</button><button data-choice="Comemoração">Comemoração</button>
+        </div>
+      </div>
+      <form class="reservation-step reservation-form" data-step="contact" hidden>
+        <p class="question">Perfeito. Só preciso de quem vai receber a confirmação.</p>
+        <label>Nome<input name="name" autocomplete="name" required placeholder="Seu nome"></label>
+        <label>Telefone<input name="phone" autocomplete="tel" required placeholder="(15) 00000-0000"></label>
+        <label>E-mail<input name="email" autocomplete="email" type="email" required placeholder="voce@email.com"></label>
+        <label>Preferência ou observação<textarea name="notes" rows="3" placeholder="Mesa mais reservada, restrição alimentar, acessibilidade..."></textarea></label>
+        <button class="confirm-reservation" type="submit">Revisar reserva <span>↗</span></button>
+      </form>
+      <div class="reservation-step reservation-summary" data-step="summary" hidden>
+        <p class="question">Sua solicitação está pronta.</p>
+        <div data-summary></div>
+        <p class="demo-note">Protótipo: nenhuma reserva foi enviada. O próximo passo real seria integrar agenda própria, CRM, WhatsApp, Google Calendar ou plataforma de reservas.</p>
+        <button class="confirm-reservation" type="button" data-finish>Concluir demonstração</button>
+      </div>
+      <div class="reservation-progress" aria-hidden="true"><span data-progress></span></div>
+    </div>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

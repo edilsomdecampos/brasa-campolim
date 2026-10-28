@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="pt-BR" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#15130f" />
+  <meta name="description" content="BRASA — cozinha autoral, fogo e hospitalidade no Campolim, Sorocaba." />
+  <title>BRASA — Campolim, Sorocaba</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+:root{
+  --ink:#15130f;
+  --paper:#eee8dc;
+  --bone:#f7f0e5;
+  --ember:#ff5a2f;
+  --acid:#c9d8a1;
+  --wine:#5a1d27;
+  --line:rgba(247,240,229,.22);
+  --serif:"Instrument Serif", Georgia, serif;
+  --sans:"DM Sans", system-ui, sans-serif;
+  --pad:clamp(22px,4vw,64px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--ink)}
+body{margin:0;background:var(--ink);color:var(--bone);font-family:var(--sans);overflow-x:hidden}
+body.modal-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button,input,textarea{font:inherit}
+button{color:inherit}
+::selection{background:var(--ember);color:var(--ink)}
+.skip-link{position:fixed;left:16px;top:-100px;z-index:9999;background:var(--bone);color:var(--ink);padding:12px 16px;border-radius:99px}.skip-link:focus{top:16px}
+.grain{position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
+.cursor-glow{position:fixed;width:38vw;height:38vw;border-radius:50%;background:radial-gradient(circle,rgba(255,90,47,.12),transparent 64%);pointer-events:none;z-index:1;transform:translate(-50%,-50%);filter:blur(12px)}
+.site-header{position:fixed;z-index:100;left:0;right:0;top:0;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:20px var(--pad);transition:background .35s,border-color .35s,transform .35s;border-bottom:1px solid transparent}.site-header.scrolled{background:rgba(21,19,15,.72);backdrop-filter:blur(18px);border-color:rgba(247,240,229,.08)}
+.brand{display:inline-flex;align-items:center;gap:10px;width:max-content}.brand-mark{width:34px;height:34px;border:1px solid rgba(247,240,229,.5);border-radius:50%;display:grid;place-items:center;font-family:var(--serif);font-size:23px;font-style:italic}.brand-word{letter-spacing:.22em;font-size:12px;font-weight:600}
+.desktop-nav{display:flex;gap:32px;font-size:12px;letter-spacing:.08em}.desktop-nav a{opacity:.72;transition:opacity .2s}.desktop-nav a:hover,.desktop-nav a:focus-visible{opacity:1}
+.reserve-pill{justify-self:end;background:rgba(247,240,229,.08);border:1px solid rgba(247,240,229,.25);padding:11px 16px;border-radius:99px;display:flex;gap:9px;align-items:center;cursor:pointer;backdrop-filter:blur(10px);font-size:12px}.reserve-pill:hover{background:var(--bone);color:var(--ink)}.reserve-dot{width:7px;height:7px;background:var(--ember);border-radius:50%;box-shadow:0 0 0 5px rgba(255,90,47,.12)}
+.menu-toggle{display:none;background:none;border:0;padding:10px}.menu-toggle span{display:block;width:24px;height:1px;background:currentColor;margin:6px 0}
+.mobile-menu{display:none}
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;padding:130px var(--pad) 46px;overflow:hidden}.hero-media,.hero-photo,.hero-vignette{position:absolute;inset:0}.hero-photo{background-image:linear-gradient(180deg,rgba(0,0,0,.06),rgba(0,0,0,.2)),url('https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=2200&q=88');background-size:cover;background-position:center 48%;transform:scale(1.04)}.hero-vignette{background:linear-gradient(180deg,rgba(17,14,10,.3) 0%,rgba(17,14,10,.04) 38%,rgba(17,14,10,.86) 100%),linear-gradient(90deg,rgba(17,14,10,.38),transparent 55%)}
+.hero-copy{position:relative;z-index:3;width:100%}.eyebrow,.section-label,.manifesto-index,.fire-copy>p:first-child,.table-copy>p,.campolim-title>p{font-size:11px;letter-spacing:.18em;text-transform:uppercase;opacity:.72}.hero h1{margin:10px 0 30px;font-family:var(--serif);font-weight:400;font-size:clamp(68px,10.5vw,168px);line-height:.78;letter-spacing:-.045em;max-width:1200px}.hero h1 span,.hero h1 em{display:block}.hero h1 em{font-weight:400;color:var(--ember)}
+.hero-bottom{display:grid;grid-template-columns:minmax(240px,420px) auto;justify-content:space-between;align-items:end;gap:32px}.hero-bottom p{max-width:430px;margin:0;font-size:clamp(15px,1.3vw,19px);line-height:1.55;color:rgba(247,240,229,.78)}.text-link{border:0;background:none;padding:0 0 6px;cursor:pointer;border-bottom:1px solid rgba(247,240,229,.5);text-transform:uppercase;letter-spacing:.11em;font-size:11px}.text-link span{margin-left:18px}.scroll-cue{position:absolute;z-index:3;right:var(--pad);top:50%;display:flex;align-items:center;gap:12px;transform:rotate(90deg) translateX(50%);transform-origin:right center;font-size:10px;text-transform:uppercase;letter-spacing:.2em}.scroll-cue i{display:block;width:60px;height:1px;background:currentColor;opacity:.5}
+.ember-field{position:absolute;inset:0;pointer-events:none}.ember{position:absolute;width:3px;height:3px;background:#ffb27a;border-radius:50%;box-shadow:0 0 8px rgba(255,116,60,.8);opacity:.5}
+.section-pad{padding:clamp(90px,12vw,180px) var(--pad)}
+.manifesto{background:var(--paper);color:var(--ink)}.manifesto-index{border-bottom:1px solid rgba(21,19,15,.2);padding-bottom:18px}.manifesto-grid{display:grid;grid-template-columns:1fr 2.3fr 1fr;gap:clamp(26px,5vw,90px);align-items:start;margin-top:50px}.manifesto-kicker{font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.7vw,42px);line-height:1.05;margin:0}.manifesto h2{font-family:var(--serif);font-weight:400;font-size:clamp(46px,6vw,92px);line-height:.95;letter-spacing:-.035em;margin:0}.manifesto-note{align-self:end}.manifesto-note p{line-height:1.65;color:rgba(21,19,15,.7);font-size:14px}.manifesto-note span{display:block;margin-top:38px;font-size:11px;text-transform:uppercase;letter-spacing:.14em}
+.fire-story{height:260vh;background:#0f0d0b}.fire-stage{position:sticky;top:0;height:100svh;overflow:hidden;display:grid;place-items:center}.fire-photo{position:absolute;inset:-8%;background-size:cover;background-position:center;will-change:transform,clip-path,opacity}.fire-photo-a{background-image:linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.3)),url('https://images.unsplash.com/photo-1516211697506-8360dbcfe9a4?auto=format&fit=crop&w=2200&q=88');clip-path:inset(8% 10% round 2px)}.fire-photo-b{background-image:linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=2200&q=88');opacity:0;transform:scale(1.12)}.fire-copy{position:relative;z-index:3;text-align:center;max-width:920px;padding:30px}.fire-copy h2{font-family:var(--serif);font-weight:400;font-size:clamp(64px,9vw,138px);line-height:.82;letter-spacing:-.05em;margin:18px 0}.fire-copy h2 em{color:var(--ember);font-weight:400}.fire-body{max-width:530px;margin:30px auto 0;line-height:1.7;color:rgba(247,240,229,.72)}.fire-word{position:absolute;z-index:2;bottom:-.16em;left:50%;transform:translateX(-50%);font-family:var(--serif);font-size:30vw;letter-spacing:-.07em;color:rgba(247,240,229,.055);white-space:nowrap;pointer-events:none}
+.menu-experience{background:var(--acid);color:var(--ink)}.menu-head{display:grid;grid-template-columns:2.2fr 1fr;gap:50px;align-items:end}.menu-head h2{font-family:var(--serif);font-size:clamp(54px,7vw,105px);font-weight:400;line-height:.9;letter-spacing:-.045em;margin:14px 0 0}.menu-head>p{max-width:420px;line-height:1.65;color:rgba(21,19,15,.68)}.menu-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:70px 0 28px}.menu-tabs button{border:1px solid rgba(21,19,15,.25);background:transparent;border-radius:99px;padding:10px 16px;cursor:pointer;font-size:12px}.menu-tabs button.active,.menu-tabs button:hover{background:var(--ink);color:var(--bone)}.dish-feature{min-height:70vh;display:grid;grid-template-columns:1.55fr .75fr;gap:clamp(30px,6vw,90px);align-items:end}.dish-image{min-height:68vh;background-size:cover;background-position:center;filter:saturate(.85);transition:transform .7s cubic-bezier(.2,.8,.2,1)}.dish-feature:hover .dish-image{transform:scale(.992)}.dish-fire{background-image:url('https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1800&q=88')}.dish-earth{background-image:url('https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=1800&q=88')}.dish-sea{background-image:url('https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?auto=format&fit=crop&w=1800&q=88')}.dish-dessert{background-image:url('https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=1800&q=88')}.dish-copy{padding-bottom:18px}.dish-copy>span{font-family:var(--serif);font-size:64px;color:rgba(21,19,15,.3)}.dish-copy h3{font-family:var(--serif);font-size:clamp(35px,4vw,58px);font-weight:400;margin:8px 0}.dish-copy p{line-height:1.6;color:rgba(21,19,15,.7)}.dish-copy small{text-transform:uppercase;letter-spacing:.14em;opacity:.55}
+.table-scene{position:relative;min-height:110svh;display:flex;align-items:flex-end;overflow:hidden}.table-photo,.table-overlay{position:absolute;inset:0}.table-photo{background:url('https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=2200&q=88') center/cover no-repeat;transform:scale(1.03)}.table-overlay{background:linear-gradient(90deg,rgba(16,13,10,.78),rgba(16,13,10,.2) 60%),linear-gradient(180deg,transparent 45%,rgba(16,13,10,.74))}.table-copy{position:relative;z-index:2;width:100%;display:grid;grid-template-columns:1fr 2.2fr .8fr;gap:50px;align-items:end}.table-copy blockquote{font-family:var(--serif);font-size:clamp(50px,6.7vw,104px);line-height:.93;letter-spacing:-.04em;margin:0}.circle-cta{justify-self:end;width:150px;height:150px;border-radius:50%;border:1px solid rgba(247,240,229,.35);background:rgba(247,240,229,.05);backdrop-filter:blur(8px);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;cursor:pointer;text-transform:uppercase;font-size:11px;letter-spacing:.15em;transition:.3s}.circle-cta span:last-child{font-size:20px}.circle-cta:hover{background:var(--ember);border-color:var(--ember);color:var(--ink);transform:rotate(-6deg) scale(1.05)}
+.campolim{background:var(--wine);display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(50px,10vw,170px)}.campolim-title h2{font-family:var(--serif);font-weight:400;font-size:clamp(58px,7vw,104px);line-height:.88;letter-spacing:-.04em}.campolim-title em{color:#f5b49d;font-weight:400}.campolim-info{align-self:end}.info-row{display:grid;grid-template-columns:130px 1fr;gap:30px;padding:20px 0;border-top:1px solid rgba(247,240,229,.2)}.info-row:last-child{border-bottom:1px solid rgba(247,240,229,.2)}.info-row span{font-size:11px;text-transform:uppercase;letter-spacing:.14em;opacity:.55}.info-row strong{font-weight:400;font-size:14px}
+.finale{min-height:92svh;position:relative;display:grid;place-items:center;text-align:center;overflow:hidden}.finale-media{position:absolute;inset:0;background:linear-gradient(rgba(15,13,11,.3),rgba(15,13,11,.68)),url('https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=2200&q=88') center/cover no-repeat;transform:scale(1.04)}.finale-copy{position:relative;z-index:2;padding:30px}.finale-copy>p{text-transform:uppercase;letter-spacing:.18em;font-size:11px}.finale h2{font-family:var(--serif);font-size:clamp(62px,9vw,150px);font-weight:400;line-height:.82;letter-spacing:-.05em;margin:20px 0 40px}.finale-button{background:var(--bone);color:var(--ink);border:0;border-radius:99px;padding:15px 20px;cursor:pointer;text-transform:uppercase;letter-spacing:.11em;font-size:11px}.finale-button span{margin-left:24px}
+.footer{padding:28px var(--pad);display:grid;grid-template-columns:1fr auto 1fr;gap:30px;align-items:center;border-top:1px solid rgba(247,240,229,.12);font-size:10px;letter-spacing:.08em;text-transform:uppercase}.footer p{opacity:.55}.footer>a:last-child{justify-self:end}.footer-brand{transform:scale(.92);transform-origin:left center}
+.mobile-reserve{display:none}
+.reservation{border:0;padding:0;background:transparent;max-width:none;max-height:none;width:100vw;height:100dvh;color:var(--bone)}.reservation::backdrop{background:rgba(7,6,5,.88);backdrop-filter:blur(12px)}.reservation-shell{position:absolute;right:0;top:0;height:100%;width:min(760px,100%);background:#171410;padding:clamp(26px,5vw,56px);display:flex;flex-direction:column;overflow:auto;border-left:1px solid rgba(247,240,229,.12)}.reservation-close{position:absolute;right:24px;top:18px;background:none;border:0;font-size:34px;font-weight:200;cursor:pointer;opacity:.7}.reservation-brand{display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:center;margin-bottom:48px}.reservation-brand .brand-mark{grid-row:1/3}.reservation-brand p,.reservation-brand small{margin:0}.reservation-brand p{font-family:var(--serif);font-size:22px}.reservation-brand small{opacity:.5;font-size:10px;letter-spacing:.08em}.assistant-message{display:flex;gap:14px;align-items:flex-start}.avatar{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--ember);color:var(--ink);font-family:var(--serif)}.assistant-message p{margin:0 0 4px;font-family:var(--serif);font-size:clamp(24px,3vw,34px)}.conversation-log{margin:30px 0 8px}.user-bubble{margin:8px 0 8px auto;max-width:78%;padding:11px 14px;border-radius:16px 16px 3px 16px;background:rgba(247,240,229,.1);font-size:13px}.reservation-step{margin-top:auto;padding-top:34px}.question{font-family:var(--serif);font-size:clamp(32px,4vw,48px);margin:0 0 22px}.choice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.choice-grid button,.date-grid button{border:1px solid rgba(247,240,229,.2);background:rgba(247,240,229,.04);min-height:58px;padding:12px;border-radius:14px;cursor:pointer;text-align:left;transition:.2s}.choice-grid button:hover,.choice-grid button:focus-visible,.date-grid button:hover,.date-grid button:focus-visible{background:var(--bone);color:var(--ink);outline:none;transform:translateY(-2px)}.date-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.date-grid strong,.date-grid span{display:block}.date-grid strong{font-family:var(--serif);font-size:28px;font-weight:400}.date-grid span{font-size:10px;text-transform:uppercase;letter-spacing:.12em;opacity:.7}.demo-note{display:block;margin-top:16px;line-height:1.5;opacity:.5;font-size:10px}.reservation-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.reservation-form .question,.reservation-form label:last-of-type,.reservation-form .confirm-reservation{grid-column:1/-1}.reservation-form label{display:grid;gap:8px;font-size:10px;text-transform:uppercase;letter-spacing:.12em;opacity:.8}.reservation-form input,.reservation-form textarea{width:100%;border:1px solid rgba(247,240,229,.18);background:rgba(247,240,229,.04);color:var(--bone);border-radius:12px;padding:14px;outline:none;resize:vertical}.reservation-form input:focus,.reservation-form textarea:focus{border-color:var(--ember)}.confirm-reservation{margin-top:8px;background:var(--ember);color:var(--ink);border:0;border-radius:99px;padding:16px 20px;font-weight:600;cursor:pointer}.confirm-reservation span{float:right}.reservation-summary [data-summary]{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:8px 0}.summary-row{display:flex;justify-content:space-between;gap:20px;padding:10px 0;font-size:13px}.summary-row span:first-child{opacity:.5}.reservation-progress{position:sticky;bottom:-1px;height:3px;background:rgba(247,240,229,.08);margin:34px calc(-1 * clamp(26px,5vw,56px)) calc(-1 * clamp(26px,5vw,56px));overflow:hidden}.reservation-progress span{display:block;height:100%;width:16%;background:var(--ember);transition:width .4s ease}
+:focus-visible{outline:2px solid var(--ember);outline-offset:4px}
+@media (max-width:900px){
+  .site-header{grid-template-columns:1fr auto}.desktop-nav,.reserve-pill{display:none}.menu-toggle{display:block}.mobile-menu{display:block;position:fixed;z-index:95;inset:0;background:var(--ink);padding:120px 24px 90px;transform:translateY(-100%);transition:transform .5s cubic-bezier(.2,.8,.2,1)}.mobile-menu.open{transform:none}.mobile-menu nav{display:grid;gap:20px}.mobile-menu a,.mobile-menu button{font-family:var(--serif);font-size:14vw;text-align:left;background:none;border:0;padding:0}.hero{padding-bottom:88px}.hero h1{font-size:clamp(66px,18vw,120px);line-height:.82}.hero-bottom{grid-template-columns:1fr}.hero-bottom .text-link{justify-self:start}.scroll-cue{display:none}.manifesto-grid{grid-template-columns:1fr}.manifesto-kicker{max-width:420px}.manifesto-note{max-width:520px}.fire-copy h2{font-size:18vw}.menu-head{grid-template-columns:1fr}.dish-feature{grid-template-columns:1fr;min-height:auto}.dish-image{min-height:62svh}.dish-copy{max-width:580px}.table-copy{grid-template-columns:1fr}.table-copy blockquote{font-size:clamp(52px,12vw,86px)}.circle-cta{justify-self:start}.campolim{grid-template-columns:1fr}.finale h2{font-size:15vw}.footer{grid-template-columns:1fr}.footer>a:last-child{justify-self:start}.mobile-reserve{display:flex;position:fixed;z-index:88;bottom:14px;left:14px;right:14px;justify-content:space-between;align-items:center;border:0;border-radius:99px;background:var(--bone);color:var(--ink);padding:15px 18px;box-shadow:0 18px 50px rgba(0,0,0,.3);text-transform:uppercase;font-size:11px;letter-spacing:.12em}.footer{padding-bottom:90px}
+}
+@media (max-width:600px){
+  .hero{min-height:100svh}.hero-photo{background-position:61% center}.hero h1{font-size:18vw}.hero-bottom p{font-size:14px;max-width:310px}.manifesto h2{font-size:13vw}.fire-photo-a{clip-path:inset(12% 5%)}.menu-experience{padding-bottom:110px}.menu-head h2{font-size:13vw}.menu-tabs{overflow-x:auto;flex-wrap:nowrap;padding-bottom:6px;margin-right:calc(-1 * var(--pad))}.menu-tabs button{white-space:nowrap}.dish-image{min-height:52svh}.table-scene{min-height:90svh}.table-copy blockquote{font-size:13vw}.campolim-title h2{font-size:14vw}.info-row{grid-template-columns:1fr;gap:7px}.finale{min-height:85svh}.finale h2{font-size:16vw}.choice-grid,.date-grid{grid-template-columns:repeat(2,1fr)}.reservation-form{grid-template-columns:1fr}.reservation-form .question,.reservation-form label:last-of-type,.reservation-form .confirm-reservation{grid-column:auto}.reservation-shell{padding-top:62px}.reservation-brand{margin-bottom:28px}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}.cursor-glow{display:none}.hero-photo,.table-photo,.finale-media{transform:none!important}}
+
+</style>
+  <script>document.documentElement.classList.remove('no-js');document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#experiencia">Pular para o conteúdo</a>
+
+  <div class="grain" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <header class="site-header" data-header>
+    <a class="brand" href="#top" aria-label="BRASA, início">
+      <span class="brand-mark">B</span>
+      <span class="brand-word">BRASA</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Navegação principal">
+      <a href="#manifesto">A casa</a>
+      <a href="#menu">Menu</a>
+      <a href="#campolim">Campolim</a>
+    </nav>
+    <button class="reserve-pill" type="button" data-open-reservation>
+      <span class="reserve-dot" aria-hidden="true"></span>
+      Reservar uma mesa
+    </button>
+    <button class="menu-toggle" type="button" aria-label="Abrir menu" aria-expanded="false" data-menu-toggle>
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" data-mobile-menu aria-hidden="true">
+    <nav aria-label="Navegação mobile">
+      <a href="#manifesto">A casa</a>
+      <a href="#menu">Menu</a>
+      <a href="#campolim">Campolim</a>
+      <button type="button" data-open-reservation>Reservar</button>
+    </nav>
+  </div>
+
+  <main id="top">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-photo"></div>
+        <div class="hero-vignette"></div>
+        <div class="ember-field" data-embers></div>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">Campolim · Sorocaba · São Paulo</p>
+        <h1 id="hero-title">
+          <span>Depois do</span>
+          <em>pôr do sol,</em>
+          <span>a cozinha acende.</span>
+        </h1>
+        <div class="hero-bottom">
+          <p>Fogo vivo, ingredientes honestos e uma noite desenhada para ficar na memória.</p>
+          <button class="text-link" type="button" data-open-reservation>Encontrar minha mesa <span>↗</span></button>
+        </div>
+      </div>
+      <div class="scroll-cue" aria-hidden="true"><span>desça</span><i></i></div>
+    </section>
+
+    <section class="manifesto section-pad" id="manifesto">
+      <div class="manifesto-index">01 — A CASA</div>
+      <div class="manifesto-grid">
+        <p class="manifesto-kicker">Não é sobre luxo.<br>É sobre presença.</p>
+        <h2>Uma mesa iluminada no ponto certo. O som baixo. O primeiro aroma chegando antes do prato.</h2>
+        <div class="manifesto-note">
+          <p>BRASA nasce como uma casa noturna de cozinha contemporânea: técnica precisa, calor humano e ingredientes conduzidos pelo fogo.</p>
+          <span>Campolim, sem pressa.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="fire-story" aria-label="A experiência do fogo">
+      <div class="fire-stage" data-fire-stage>
+        <div class="fire-photo fire-photo-a" aria-hidden="true"></div>
+        <div class="fire-photo fire-photo-b" aria-hidden="true"></div>
+        <div class="fire-copy">
+          <p>02 — O GESTO</p>
+          <h2>O fogo não decora.<br><em>Ele decide.</em></h2>
+          <p class="fire-body">Textura, ponto, perfume, contraste. A chama participa de cada prato antes que ele participe da sua noite.</p>
+        </div>
+        <div class="fire-word" aria-hidden="true">BRASA</div>
+      </div>
+    </section>
+
+    <section class="menu-experience section-pad" id="menu">
+      <div class="menu-head">
+        <div>
+          <p class="section-label">03 — MENU EM MOVIMENTO</p>
+          <h2>Escolha pelo desejo,<br>não pela ordem da página.</h2>
+        </div>
+        <p>Uma prévia editorial. Os itens abaixo são espaços conceituais para o cardápio real.</p>
+      </div>
+
+      <div class="menu-tabs" role="tablist" aria-label="Categorias do menu">
+        <button class="active" role="tab" aria-selected="true" data-menu-tab="fogo">Do fogo</button>
+        <button role="tab" aria-selected="false" data-menu-tab="terra">Da terra</button>
+        <button role="tab" aria-selected="false" data-menu-tab="mar">Do mar</button>
+        <button role="tab" aria-selected="false" data-menu-tab="doce">Depois</button>
+      </div>
+
+      <div class="menu-stage" data-menu-stage>
+        <article class="dish-feature is-active" data-menu-panel="fogo">
+          <div class="dish-image dish-fire" role="img" aria-label="Prato autoral finalizado ao fogo"></div>
+          <div class="dish-copy">
+            <span>01</span>
+            <h3>[PRATO ASSINATURA]</h3>
+            <p>[descrição real do prato, ingrediente principal, técnica e acompanhamento]</p>
+            <small>Preço a inserir</small>
+          </div>
+        </article>
+        <article class="dish-feature" data-menu-panel="terra" hidden>
+          <div class="dish-image dish-earth" role="img" aria-label="Ingrediente vegetal em apresentação autoral"></div>
+          <div class="dish-copy">
+            <span>02</span>
+            <h3>[PRATO DA TERRA]</h3>
+            <p>[descrição real do prato, sazonalidade, origem e técnica]</p>
+            <small>Preço a inserir</small>
+          </div>
+        </article>
+        <article class="dish-feature" data-menu-panel="mar" hidden>
+          <div class="dish-image dish-sea" role="img" aria-label="Prato de peixe com apresentação contemporânea"></div>
+          <div class="dish-copy">
+            <span>03</span>
+            <h3>[PRATO DO MAR]</h3>
+            <p>[descrição real do prato, pesca, cocção e finalização]</p>
+            <small>Preço a inserir</small>
+          </div>
+        </article>
+        <article class="dish-feature" data-menu-panel="doce" hidden>
+          <div class="dish-image dish-dessert" role="img" aria-label="Sobremesa autoral em luz dramática"></div>
+          <div class="dish-copy">
+            <span>04</span>
+            <h3>[SOBREMESA]</h3>
+            <p>[descrição real da sobremesa, textura, temperatura e acabamento]</p>
+            <small>Preço a inserir</small>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="table-scene" aria-label="Uma noite no BRASA">
+      <div class="table-photo" aria-hidden="true"></div>
+      <div class="table-overlay"></div>
+      <div class="table-copy section-pad">
+        <p>04 — A NOITE</p>
+        <blockquote>“A melhor mesa não é a mais disputada. É a que parece ter sido preparada para você.”</blockquote>
+        <button type="button" class="circle-cta" data-open-reservation aria-label="Reservar uma mesa agora">
+          <span>reservar</span><span>↗</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="campolim section-pad" id="campolim">
+      <div class="campolim-title">
+        <p>05 — CAMPOLIM</p>
+        <h2>Uma casa para<br>começar a noite<br><em>ou prolongá-la.</em></h2>
+      </div>
+      <div class="campolim-info">
+        <div class="info-row"><span>Endereço</span><strong>[ENDERECO]</strong></div>
+        <div class="info-row"><span>Horários</span><strong>[HORARIOS]</strong></div>
+        <div class="info-row"><span>Telefone</span><strong>[TELEFONE]</strong></div>
+        <div class="info-row"><span>WhatsApp</span><strong>[WHATSAPP]</strong></div>
+        <div class="info-row"><span>Instagram</span><strong>[INSTAGRAM]</strong></div>
+        <div class="info-row"><span>Mapa</span><strong>[GOOGLE_MAPS]</strong></div>
+      </div>
+    </section>
+
+    <section class="finale">
+      <div class="finale-media" aria-hidden="true"></div>
+      <div class="finale-copy">
+        <p>Campolim · Sorocaba</p>
+        <h2>A próxima memória<br>pode começar aqui.</h2>
+        <button class="finale-button" type="button" data-open-reservation>Reservar uma mesa <span>↗</span></button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="#top"><span class="brand-mark">B</span><span class="brand-word">BRASA</span></a>
+    <p>© <span data-year></span> BRASA. Conceito digital para Campolim, Sorocaba.</p>
+    <a href="#top">voltar ao início ↑</a>
+  </footer>
+
+  <button class="mobile-reserve" type="button" data-open-reservation>
+    <span>Reservar mesa</span><span>↗</span>
+  </button>
+
+  <dialog class="reservation" data-reservation aria-labelledby="reservation-title">
+    <div class="reservation-shell">
+      <button class="reservation-close" type="button" data-close-reservation aria-label="Fechar reserva">×</button>
+      <div class="reservation-brand">
+        <span class="brand-mark">B</span>
+        <p>Concierge BRASA</p>
+        <small>Assistente de reserva · demonstração</small>
+      </div>
+      <div class="reservation-conversation" aria-live="polite">
+        <div class="assistant-message" id="reservation-title">
+          <span class="avatar">B</span>
+          <div><p>Boa noite.</p><p>Vamos encontrar a mesa certa para a sua noite?</p></div>
+        </div>
+        <div class="conversation-log" data-conversation-log></div>
+      </div>
+      <div class="reservation-step" data-step="party">
+        <p class="question">Para quantas pessoas?</p>
+        <div class="choice-grid party-grid">
+          <button data-choice="2 pessoas">2</button><button data-choice="3 pessoas">3</button><button data-choice="4 pessoas">4</button><button data-choice="5 pessoas">5</button><button data-choice="6 pessoas">6</button><button data-choice="7+ pessoas">7+</button>
+        </div>
+      </div>
+      <div class="reservation-step" data-step="date" hidden>
+        <p class="question">Qual dia funciona melhor?</p>
+        <div class="date-grid" data-date-options></div>
+      </div>
+      <div class="reservation-step" data-step="time" hidden>
+        <p class="question">Prefere jantar mais cedo ou mais tarde?</p>
+        <div class="choice-grid time-grid">
+          <button data-choice="19:00">19:00</button><button data-choice="19:45">19:45</button><button data-choice="20:30">20:30</button><button data-choice="21:15">21:15</button><button data-choice="22:00">22:00</button>
+        </div>
+        <small class="demo-note">Horários ilustrativos. A disponibilidade real será conectada ao sistema de reservas.</small>
+      </div>
+      <div class="reservation-step" data-step="occasion" hidden>
+        <p class="question">Há algo especial nessa noite?</p>
+        <div class="choice-grid occasion-grid">
+          <button data-choice="Jantar sem ocasião especial">Só jantar bem</button><button data-choice="Aniversário">Aniversário</button><button data-choice="Encontro">Encontro</button><button data-choice="Comemoração">Comemoração</button>
+        </div>
+      </div>
+      <form class="reservation-step reservation-form" data-step="contact" hidden>
+        <p class="question">Perfeito. Só preciso de quem vai receber a confirmação.</p>
+        <label>Nome<input name="name" autocomplete="name" required placeholder="Seu nome"></label>
+        <label>Telefone<input name="phone" autocomplete="tel" required placeholder="(15) 00000-0000"></label>
+        <label>E-mail<input name="email" autocomplete="email" type="email" required placeholder="voce@email.com"></label>
+        <label>Preferência ou observação<textarea name="notes" rows="3" placeholder="Mesa mais reservada, restrição alimentar, acessibilidade..."></textarea></label>
+        <button class="confirm-reservation" type="submit">Revisar reserva <span>↗</span></button>
+      </form>
+      <div class="reservation-step reservation-summary" data-step="summary" hidden>
+        <p class="question">Sua solicitação está pronta.</p>
+        <div data-summary></div>
+        <p class="demo-note">Protótipo: nenhuma reserva foi enviada. O próximo passo real seria integrar agenda própria, CRM, WhatsApp, Google Calendar ou plataforma de reservas.</p>
+        <button class="confirm-reservation" type="button" data-finish>Concluir demonstração</button>
+      </div>
+      <div class="reservation-progress" aria-hidden="true"><span data-progress></span></div>
+    </div>
+  </dialog>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script>
+(() => {
+  const $ = (s, c = document) => c.querySelector(s);
+  const $$ = (s, c = document) => [...c.querySelectorAll(s)];
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  $('[data-year]').textContent = new Date().getFullYear();
+
+  const header = $('[data-header]');
+  addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 24), { passive: true });
+
+  const glow = $('.cursor-glow');
+  if (!reduced && matchMedia('(pointer:fine)').matches) {
+    addEventListener('pointermove', e => {
+      glow.style.left = `${e.clientX}px`;
+      glow.style.top = `${e.clientY}px`;
+    }, { passive: true });
+  } else glow.hidden = true;
+
+  const emberField = $('[data-embers]');
+  for (let i = 0; i < 28; i++) {
+    const ember = document.createElement('i');
+    ember.className = 'ember';
+    ember.style.left = `${Math.random() * 100}%`;
+    ember.style.top = `${65 + Math.random() * 35}%`;
+    ember.style.opacity = `${.15 + Math.random() * .5}`;
+    emberField.append(ember);
+    if (!reduced) {
+      ember.animate([
+        { transform: 'translate3d(0,20px,0) scale(.7)', opacity: 0 },
+        { opacity: .7, offset: .25 },
+        { transform: `translate3d(${(Math.random()-.5)*90}px,-${160+Math.random()*320}px,0) scale(1.3)`, opacity: 0 }
+      ], { duration: 3400 + Math.random()*4400, delay: Math.random()*3000, iterations: Infinity, easing: 'cubic-bezier(.2,.6,.3,1)' });
+    }
+  }
+
+  const mobileMenu = $('[data-mobile-menu]');
+  const menuToggle = $('[data-menu-toggle]');
+  const closeMobileMenu = () => {
+    mobileMenu.classList.remove('open');
+    mobileMenu.setAttribute('aria-hidden', 'true');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  };
+  menuToggle.addEventListener('click', () => {
+    const open = !mobileMenu.classList.contains('open');
+    mobileMenu.classList.toggle('open', open);
+    mobileMenu.setAttribute('aria-hidden', String(!open));
+    menuToggle.setAttribute('aria-expanded', String(open));
+  });
+  $$('a,button', mobileMenu).forEach(el => el.addEventListener('click', () => {
+    if (!el.hasAttribute('data-open-reservation')) closeMobileMenu();
+  }));
+
+  const menuTabs = $$('[data-menu-tab]');
+  const menuPanels = $$('[data-menu-panel]');
+  menuTabs.forEach(tab => tab.addEventListener('click', () => {
+    const key = tab.dataset.menuTab;
+    menuTabs.forEach(t => { t.classList.toggle('active', t === tab); t.setAttribute('aria-selected', String(t === tab)); });
+    menuPanels.forEach(p => {
+      const active = p.dataset.menuPanel === key;
+      p.hidden = !active;
+      p.classList.toggle('is-active', active);
+      if (active && !reduced && window.gsap) gsap.fromTo(p, { opacity: 0, y: 28 }, { opacity: 1, y: 0, duration: .6, ease: 'power3.out' });
+    });
+  }));
+
+  if (!reduced && window.gsap && window.ScrollTrigger) {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.to('.hero-photo', { scale: 1.13, yPercent: 8, ease: 'none', scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.from('.hero h1 span, .hero h1 em', { yPercent: 100, opacity: 0, duration: 1.15, stagger: .09, ease: 'power4.out', delay: .1 });
+    gsap.from('.eyebrow, .hero-bottom', { opacity: 0, y: 18, duration: .9, stagger: .12, delay: .55, ease: 'power3.out' });
+    gsap.from('.manifesto-grid > *', { y: 70, opacity: 0, stagger: .12, ease: 'power3.out', scrollTrigger: { trigger: '.manifesto-grid', start: 'top 78%' } });
+    const fireTL = gsap.timeline({ scrollTrigger: { trigger: '.fire-story', start: 'top top', end: 'bottom bottom', scrub: 1 } });
+    fireTL.to('.fire-photo-a', { scale: 1.16, clipPath: 'inset(0% 0% round 0px)', duration: 1.3 })
+      .to('.fire-copy', { y: -70, opacity: .12, duration: .7 }, '<.4')
+      .to('.fire-photo-b', { opacity: 1, scale: 1, duration: 1 }, '-=.2')
+      .to('.fire-word', { y: -80, opacity: .7, duration: .8 }, '<');
+    gsap.to('.table-photo', { scale: 1.1, ease: 'none', scrollTrigger: { trigger: '.table-scene', start: 'top bottom', end: 'bottom top', scrub: true } });
+    gsap.from('.table-copy > *', { opacity: 0, y: 60, stagger: .1, scrollTrigger: { trigger: '.table-copy', start: 'top 75%' } });
+    gsap.from('.info-row', { opacity: 0, x: 30, stagger: .08, scrollTrigger: { trigger: '.campolim-info', start: 'top 78%' } });
+    gsap.to('.finale-media', { scale: 1.12, ease: 'none', scrollTrigger: { trigger: '.finale', start: 'top bottom', end: 'bottom top', scrub: true } });
+  }
+
+  // Reservation concierge prototype. Replace demo availability with real API / CRM / calendar hooks.
+  const dialog = $('[data-reservation]');
+  const log = $('[data-conversation-log]');
+  const progress = $('[data-progress]');
+  const steps = $$('[data-step]', dialog);
+  const state = { party: '', date: '', time: '', occasion: '', name: '', phone: '', email: '', notes: '' };
+  const order = ['party','date','time','occasion','contact','summary'];
+
+  const showStep = name => {
+    steps.forEach(step => step.hidden = step.dataset.step !== name);
+    const ix = order.indexOf(name);
+    progress.style.width = `${((ix + 1) / order.length) * 100}%`;
+  };
+  const sayUser = text => {
+    const node = document.createElement('div');
+    node.className = 'user-bubble';
+    node.textContent = text;
+    log.append(node);
+    node.scrollIntoView({ block: 'nearest', behavior: reduced ? 'auto' : 'smooth' });
+  };
+  const resetReservation = () => {
+    Object.keys(state).forEach(k => state[k] = '');
+    log.innerHTML = '';
+    showStep('party');
+    $('.reservation-form', dialog)?.reset();
+  };
+  const openReservation = () => {
+    closeMobileMenu();
+    resetReservation();
+    dialog.showModal();
+    document.body.classList.add('modal-open');
+  };
+  const closeReservation = () => {
+    dialog.close();
+    document.body.classList.remove('modal-open');
+  };
+  $$('[data-open-reservation]').forEach(b => b.addEventListener('click', openReservation));
+  $('[data-close-reservation]').addEventListener('click', closeReservation);
+  dialog.addEventListener('click', e => { if (e.target === dialog) closeReservation(); });
+
+  const dateOptions = $('[data-date-options]');
+  const fmtDay = new Intl.DateTimeFormat('pt-BR', { weekday:'short' });
+  const fmtDate = new Intl.DateTimeFormat('pt-BR', { day:'2-digit', month:'short' });
+  for (let i = 1; i <= 6; i++) {
+    const d = new Date(); d.setDate(d.getDate()+i);
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.dataset.choice = d.toISOString().slice(0,10);
+    b.dataset.label = fmtDate.format(d);
+    b.innerHTML = `<strong>${fmtDate.format(d)}</strong><span>${fmtDay.format(d)}</span>`;
+    dateOptions.append(b);
+  }
+
+  dialog.addEventListener('click', e => {
+    const btn = e.target.closest('[data-choice]');
+    if (!btn) return;
+    const step = btn.closest('[data-step]')?.dataset.step;
+    const value = btn.dataset.choice;
+    if (step === 'party') { state.party = value; sayUser(value); showStep('date'); }
+    if (step === 'date') { state.date = btn.dataset.label || value; sayUser(state.date); showStep('time'); }
+    if (step === 'time') { state.time = value; sayUser(value); showStep('occasion'); }
+    if (step === 'occasion') { state.occasion = value; sayUser(value); showStep('contact'); }
+  });
+
+  $('.reservation-form', dialog).addEventListener('submit', e => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    state.name = data.get('name').trim();
+    state.phone = data.get('phone').trim();
+    state.email = data.get('email').trim();
+    state.notes = data.get('notes').trim();
+    sayUser(`${state.name} · ${state.phone}`);
+    const summary = $('[data-summary]');
+    const rows = [
+      ['Pessoas', state.party], ['Data', state.date], ['Horário', state.time], ['Ocasião', state.occasion],
+      ['Nome', state.name], ['Telefone', state.phone], ['E-mail', state.email], ['Observação', state.notes || '—']
+    ];
+    summary.innerHTML = rows.map(([a,b]) => `<div class="summary-row"><span>${a}</span><span>${b}</span></div>`).join('');
+    showStep('summary');
+  });
+  $('[data-finish]').addEventListener('click', closeReservation);
+})();
+
+</script>
+</body>
+</html>
